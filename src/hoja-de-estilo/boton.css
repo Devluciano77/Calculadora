@@ -1,5 +1,5 @@
 .boton-contenedor{
-    height: 83px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
     font-size: 38px;
     background-color: rgb(41, 41, 129);
     color: aliceblue;
-    border-radius: 25px;
+    border-radius: 15px;
     border: 2px solid white;
     margin: 4px;
     cursor: pointer;

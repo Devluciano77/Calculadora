@@ -9,18 +9,39 @@ import { evaluate } from 'mathjs'
 
 function App() {
 
-  const [input, setInput] = useState('');
-  const agregarInput = val => {
+  const [input, setInput] = useState(''); //estado de la pantalla
+
+  const agregarInput = val => { 
     setInput(input + val);
   };
+
   const calcularResultado = () => {
-    if (input){
-      setInput(evaluate(input));
-    } else{
-      alert('ingresa los valores');
+    try {
+      if (input) {
+        setInput(evaluate(input));
+        console.log(typeof setInput);
+      } else {
+        alert('Ingresa los valores');
+      }
+    } catch (error) {
+      setInput('Syntax Error');
     }
-    
-  }
+  };
+
+  // const calcularResultado = () => {
+  //   try {
+  //     if (input) {
+  //       const resultado = evaluate(input);
+  //       const MAX_LENGTH = 10;
+  //       setInput(resultado.length > MAX_LENGTH ? resultado.substring(0, MAX_LENGTH) + '...' : resultado);
+  //       console.log(setInput);
+  //     } else {
+  //       alert('Ingresa los valores');
+  //     }
+  //   } catch (error) {
+  //     setInput('Syntax Error');
+  //   }
+  // };
 
   return (
     <div className="App">
@@ -65,10 +86,13 @@ function App() {
           <BotonClear manejarClear={() => setInput('')}>Clear</BotonClear>
         </div>
 
-        
+
    
       </div>
     </div>
+
+
+    
   );
 }
 
